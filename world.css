@@ -15,7 +15,7 @@
 body {
     margin: 0;
     padding: 0 1rem 3rem;
-    font-family: Arial, sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     color: var(--ink);
     background-color: #2d3748;
     background-image: url("world-bg.svg");
