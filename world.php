@@ -12,7 +12,7 @@ $country = isset($_GET['country']) ? trim($_GET['country']) : '';
 
 if(isset($_GET['lookup']) && $_GET['lookup'] === 'cities'):
   
-    $stmt = $conn->prepare('SELECT c.name,c.district,c.population FROM cities c JOIN countries cs ON c.country_code=cs.code WHERE cs.name = ? ');
+    $stmt = $conn->prepare('SELECT c.name,c.district,c.population FROM cities c JOIN countries cs ON c.country_code=cs.code WHERE cs.name = ?  ORDER BY c.district ASC,c.name ASC');
     $stmt->execute([$country]);
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -33,7 +33,7 @@ if(isset($_GET['lookup']) && $_GET['lookup'] === 'cities'):
 
 <?php else:
 
-  $stmt = $conn->prepare('SELECT * FROM countries WHERE name LIKE ?');
+  $stmt = $conn->prepare('SELECT * FROM countries WHERE name LIKE ? ORDER BY name ASC;');
   $stmt->execute(['%' . $country . '%']);
   $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
