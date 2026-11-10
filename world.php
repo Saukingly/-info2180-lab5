@@ -1,12 +1,15 @@
 <?php
 $host = 'localhost';
+$port = '3307';
 $username = 'lab5_user';
-$password = '';
+$password = 'password123';
 $dbname = 'world';
 
-$conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
-$stmt = $conn->query("SELECT * FROM countries");
+$conn = new PDO("mysql:host=$host;port=$port;dbname=$dbname;charset=utf8mb4", $username, $password);
+$country = isset($_GET['country']) ? trim($_GET['country']) : '';
 
+$stmt = $conn->prepare('SELECT * FROM countries WHERE name LIKE ?');
+$stmt->execute(['%' . $country . '%']);
 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
