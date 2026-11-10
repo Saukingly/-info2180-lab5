@@ -20,7 +20,7 @@ if(isset($_GET['lookup']) && $_GET['lookup'] === 'cities'):
   <tr>
     <th>City Name</th>
     <th>District</th>
-    <th>Populatiion</th>
+    <th>Population</th>
   </tr>
 <?php foreach ($results as $row): ?>
   <tr>
