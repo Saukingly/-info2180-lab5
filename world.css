@@ -1,1 +1,37 @@
-/* Add your own styles */
+:root {
+    --main-padding: 35px;
+    --red: rgb(192, 17, 17);
+    --green: rgb(72, 228, 24);
+    --blue: rgb(8, 100, 185);
+    --ink: #2d1e5a;
+    --yellow: #ffe050;
+    --pink: #ff96be;
+    --green: #5adc96;
+    --orange: #ff8264;
+    --purple: #b99cff;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: medium;
+    background-image: url("world-bg.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+header {
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 1.5rem 2rem;
+}
+
+main {
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 1.5rem 2rem;
+    background-color: transparent;
+    border: 4px solid #2d1e5a;
+    border-radius: 20px;
+}
